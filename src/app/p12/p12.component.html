@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-md-10">
+            <h5>Todo or Not Todo!!</h5>
+            <div class="row">
+                <div class="col col-md-6">
+                    <input type="text" class="form-control" placeholder="Enter Todo" [(ngModel)]="todo">
+                </div>
+                <div class="col col-md-6">
+                    <button class="btn btn-primary" (click)="addTodo()">Add Todo</button>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col col-md-6">
+                    <table class="table-responsive thead-dark">
+                        <tr>
+                            <th colspan="2">Todo List</th>
+                        </tr>
+                        <tr *ngFor="let t of todos">
+                            <td><input type="checkbox" [(ngModel)]="t.completed"></td>
+                            <td>
+                                <span [ngClass]="{'completed': t.completed}">{{t.title}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
