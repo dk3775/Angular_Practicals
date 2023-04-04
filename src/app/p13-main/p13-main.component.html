@@ -1,1 +1,66 @@
-<p>p13-main works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>I recommend movies!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Select Movie Genre</h3>
+            <div class="form-group">
+                <div class="input-group mb-3 col-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="genre" value="Action" [(ngModel)]="action">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" value="Action" disabled>
+                </div>
+                <div class="input-group mb-3 col-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="genre" value="Horror" [(ngModel)]="horror">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" value="Horror" disabled>
+                </div>
+                <div class="input-group mb-3 col-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="genre" value="Comedy" [(ngModel)]="comedy">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" value="Comedy" disabled>
+                </div>
+                <div class="input-group mb-3 col-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="genre" value="Romance" [(ngModel)]="romance">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" value="Romance" disabled>
+                </div>
+                <div class="input-group mb-3 col-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" name="genre" value="Thriller" [(ngModel)]="thriller">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" value="Thriller" disabled>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div *ngIf="doDisplay()">
+                <h4>Recommended Movies:</h4>
+                <div *ngFor="let movie of recmovies">
+                    <div [innerHTML]="movie.card"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
