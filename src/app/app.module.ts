@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { P11Component } from './p11/p11.component';
 import { P12Component } from './p12/p12.component';
 import { P13MainComponent } from './p13-main/p13-main.component';
+import { P15Component } from './p15/p15.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { P13MainComponent } from './p13-main/p13-main.component';
     P11Component,
     P12Component,
     P13MainComponent,
+    P15Component,
   ],
   imports: [
     BrowserModule,
