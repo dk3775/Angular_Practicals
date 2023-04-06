@@ -11,15 +11,15 @@ export class P15Component {
     console.log('Observable is created!');
     let count = 0;
   
-    
+
     setInterval(() => {
       observer.next(count);
       count++;
-      if (count == 5) {
+      if (count == 10) {
         observer.complete();
       }
-      if (count > 5) {
-        observer.error(new Error('Count is greater than 5!'));
+      if (count > 10) {
+        observer.error(new Error('Count is greater than 10!'));
       }
     });
 
@@ -28,7 +28,11 @@ export class P15Component {
   ngOnInit() {
     // Subscribe to the observable
   this.obs1.subscribe({
-    next: (nextValue) => console.log(nextValue),
+    next: (nextValue:any) => {
+      if(nextValue  % 2 == 0) {
+        console.log(nextValue);
+      }
+    },
     error: (error) => console.error(error),
     complete: () => console.log('Complete')
   });
