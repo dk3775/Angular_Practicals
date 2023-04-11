@@ -10,8 +10,6 @@ export class P15Component {
   obs1 = new Observable((observer) => {
     console.log('Observable is created!');
     let count = 0;
-  
-
     setInterval(() => {
       observer.next(count);
       count++;
@@ -21,8 +19,7 @@ export class P15Component {
       if (count > 10) {
         observer.error(new Error('Count is greater than 10!'));
       }
-    });
-
+    }, 1000);
   });
 
   ngOnInit() {
